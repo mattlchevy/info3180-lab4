@@ -4,16 +4,16 @@
 <h1 class="page-header">File Upload</h1>
 
 {% include 'flash_messages.html' %}
-{{ forms.csrf_token }}
+{{ form.csrf_token }}
 {# Add the appropriate method and enctype attributes to the form tag to allow for file uploads #}
 <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
 
   {# Add the file upload field as you learnt for Flask-WTF #}
-  <div>
-    {{forms.photo.label}}
-    {{forms.photo}}
+  <div class="form-group">
+    {{form.photo.label}}
+    {{form.photo}}
   </div>
-  <div>
+  <div class="form-group">
     {{form.description.label}}
     {{form.description}}
   </div>
